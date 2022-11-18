@@ -161,6 +161,7 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
+
         File::delete('article_photos/'.$article->image);
 
         Article::destroy($article->id);

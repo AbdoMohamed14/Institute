@@ -82,6 +82,7 @@ $slug = ($lang == 'en')?"":"_ar";
                 <div class="section-content">
                     @foreach($events as $event)
                     @php   
+                    $title_attr = 'title'. $slug;
                     $content_attr = "content".$slug;
                     @endphp
                     <article class="event nearest">
@@ -102,7 +103,7 @@ $slug = ($lang == 'en')?"":"_ar";
                         </figure>
                         <aside>
                             <header>
-                                <a href="{{route('events.show', $event->id)}}">{{$event->title}}</a>
+                                <a href="{{route('events.show', $event->id)}}">{{$event->$title_attr}}</a>
                             </header>
                             <div class="additional-info">{!! Str::limit($event->$content_attr, 70) !!}</div>
                         </aside>
@@ -120,7 +121,7 @@ $slug = ($lang == 'en')?"":"_ar";
                     @php
                         $disc_arrt = "disc".$slug;
                     @endphp
-                    <p><strong>Welcome to {{$settings->name}}.</strong> {!! $settings->$disc_arrt !!}. </p>
+                    <p><strong>Welcome to {{$settings->name}}.</strong> {!! $settings->$disc_arrt !!}</p>
                     <a href="about-us" class="read-more stick-to-bottom">  {{ __('static.read more')}}</a>
                 </div><!-- /.section-content -->
             </section><!-- /.about -->
@@ -142,7 +143,7 @@ $slug = ($lang == 'en')?"":"_ar";
             @endphp
             <div class="author">
                 <blockquote>
-                    <figure class="author-picture"><img src="{{URL::asset('testmonials_photos/' .$testmonial->image)}}" style="width: 100px; height:100px" alt=""></figure>
+                    <figure class="author-picture"><img src="{{asset('testmonials_photos/' .$testmonial->image)}}" style="width: 100px; height:100px" alt=""></figure>
                     <article class="paragraph-wrapper">
                         <div class="inner">
                             <header>{{$testmonial->$content_attr}}</header>

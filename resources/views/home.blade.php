@@ -44,7 +44,7 @@
 								<img class="card-img-top" src="{{asset('article_photos/' .$article->image)}}" alt="Card image cap" style="width: 100%; height:10rem">
 								<div class="card-body">
 								  <h5 class="card-title">{{$article->title}}</h5>
-								  <p class="card-text">{{$article->content}}</p>
+								  <p class="card-text">{!!$article->content!!}</p>
 								</div>
 							  </div>
 						</div>
