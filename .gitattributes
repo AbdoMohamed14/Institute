@@ -2,6 +2,7 @@
 
 *.js linguist-detectable=false
 *.css linguist-detectable=false 
+*.scss linguist-detectable=false 
 
 *.blade.php diff=php
 *.css diff=css
